@@ -1,5 +1,50 @@
 'use strict';
 
+function dwarfRollCall(dwarves){
+  var dwarvesList=""
+  for (var i=0; i<dwarves.length; i++){
+  dwarvesList+= (i+1) + ". " + dwarves[i]+ " ";}
+  return dwarvesList
+}
+
+function summonCaptainPlanet(planeteerCalls){
+var planetCaps = [];
+for(var i = 0; i < planeteerCalls.length; i++) {
+planetCaps.push(planeteerCalls[i].toUpperCase() + '!');
+  }
+ return planetCaps;
+  }
+
+/*The longPlaneteerCalls method should accept
+an array of calls. The function should tell
+us if any of the calls are longer than four characters.*/
+
+
+function longPlaneteerCalls(wordsList) {
+	var longWordsList = false;
+  for (var i = 0; i < wordsList.length; i++) {
+    if (wordsList[i].length > 4){
+      longWordsList = true;
+    }
+  };
+  return longWordsList;
+}
+
+  function findTheCheese (list) {
+  	var cheese = ["cheddar", "gouda", "camembert"];
+  	for (var i = 0; i < list.length; i++) {
+  		for (var j = 0; j < cheese.length; j++) {
+  			if ( cheese[j]=== list[i] ) {
+  				return list[i];
+  			}
+  		}
+  	}
+  	 return "no cheese!";
+  }
+
+
+
+
 describe("dwarfRollCall", function() {
       it("prints out dwarfs in a numbered list based on an array'", function() {
         var dwarves = ["Dopey", "Grumpy", "Bashful"];
@@ -21,6 +66,8 @@ describe("summonCaptainPlanet", function() {
         });
   });
 });
+
+
 
 describe("longPlaneteerCalls", function() {
       it("returns true if any calls are longer than 4 characters", function() {
